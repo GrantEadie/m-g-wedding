@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
 :root {
-  --main: #eeeae796;
+  --main: #fff1ec;
   --primary: #645c4d;
   --secondary: #9e5a4a;
 }
