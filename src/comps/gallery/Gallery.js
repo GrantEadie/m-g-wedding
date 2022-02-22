@@ -5,6 +5,7 @@ import Modal from "../gallery/Modal";
 import { AnimatePresence } from "framer-motion";
 import "./gallery.css";
 
+
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   return (

@@ -1,16 +1,25 @@
 import React from "react";
 import Main from "./comps/main/Main";
+import RSVP from "./comps/rsvp/RSVP";
+import GuestList from "./comps/guestlist/GuestList";
 import { motion } from "framer-motion";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 4 }}
-    >
-      <Main />
-    </motion.div>
+    <BrowserRouter>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 4 }}
+      >
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="rsvp" element={<RSVP />} />
+          <Route path="guestlist" element={<GuestList />} />
+        </Routes>
+      </motion.div>
+    </BrowserRouter>
   );
 }
 
