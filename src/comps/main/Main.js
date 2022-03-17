@@ -1,5 +1,5 @@
 import React from "react";
-import CeremonyDayLogo from "../../svgs/CeremonyDayLogo";
+// import CeremonyDayLogo from "../../svgs/CeremonyDayLogo";
 import Tile from "../details/Tile";
 import Lodging from "../details/Lodging";
 import Gallery from "../gallery/Gallery";
@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div>
       <div className="main-container">
-          <CeremonyDayLogo />
+        {/* <CeremonyDayLogo /> */}
         <div className="details">
           <Tile />
           <Lodging />

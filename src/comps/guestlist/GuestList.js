@@ -6,7 +6,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10% 25%;
+  padding: 10% 10%;
 `;
 
 const List = styled.div`
@@ -56,7 +56,7 @@ function total(docs) {
 
 export default function GuestList() {
   const { docs } = useFirestore("guests");
-  console.log(docs[0]);
+  console.log(docs);
 
   return docs.length ? (
     <Container>

@@ -1,7 +1,11 @@
 import React from "react";
 import Main from "./comps/main/Main";
 import RSVP from "./comps/rsvp/RSVP";
-import Header from "./comps/header/Header"
+import Header from "./comps/header/Header";
+import Lodging from "./comps/lodging/Lodging";
+import Registry from "./comps/registry/Registry";
+import Schedule from "./comps/schedule/Schedule";
+import Weekend from "./comps/weekend/Weekend";
 import GuestList from "./comps/guestlist/GuestList";
 import { motion } from "framer-motion";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,10 +18,14 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="rsvp" element={<RSVP />} />
+          <Route path="lodging" element={<Lodging />} />
+          <Route path="schedule" element={<Schedule />} />
+          <Route path="registry" element={<Registry />} />
+          <Route path="weekend" element={<Weekend />} />
           <Route path="guestlist" element={<GuestList />} />
         </Routes>
       </motion.div>
