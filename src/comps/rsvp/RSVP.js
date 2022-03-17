@@ -4,6 +4,7 @@ import { ReactComponent as Leaf } from "../../svgs/simple-leaf.svg";
 
 import { useState } from "react";
 import { projectFirestore, timestamp } from "../firebase/config";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -24,12 +25,13 @@ const Body = styled.div`
 
 const Title = styled.div`
   color: var(--tertiary);
-  font-size: 40px;
+  font-size: 2rem;
   flex-grow: 2;
   display: flex;
   justify-content: center;
   font-weight: 900;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 `;
 
 const Divide = styled.div`
@@ -67,6 +69,7 @@ const Date = styled.div`
   font-style: italic;
   font-family: "Italiana", serif;
   margin: 30px 0;
+  text-align: center;
 `;
 const Button = styled.div`
   padding: 10px 30px;
@@ -122,15 +125,19 @@ const Submit = styled.div`
 export default function RSVP() {
   const [guestInfo, setGuestInfo] = useState({});
   const [modal, setModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleAdd = () => {
-    console.log(guestInfo);
     setModal(true);
 
     projectFirestore
       .collection("guests")
       .add({ ...guestInfo, createdAt: timestamp() });
   };
+
+  function handleDetailClick() {
+    navigate("/");
+  }
 
   return (
     <>
@@ -147,7 +154,7 @@ export default function RSVP() {
           <Info>
             <Tag>SAVE THE DATE AND RSVP</Tag>
             <Date>June 24th, 2022</Date>
-            <Button>DETAILS</Button>
+            <Button onClick={() => handleDetailClick()}>DETAILS</Button>
           </Info>
           <Form>
             <Input

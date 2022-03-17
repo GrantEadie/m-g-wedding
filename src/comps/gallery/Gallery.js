@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import UploadForm from "../gallery/UploadForm";
+import UploadForm from "../gallery/UploadForm";
 import ImageGrid from "../gallery/ImageGrid";
 import Modal from "../gallery/Modal";
 import { AnimatePresence } from "framer-motion";
@@ -17,7 +17,7 @@ const Gallery = () => {
             <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
           )}
         </AnimatePresence>
-        {/* <UploadForm /> */}
+        <UploadForm />
       </div>
     </div>
   );
