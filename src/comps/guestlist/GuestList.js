@@ -1,79 +1,102 @@
 import styled from "styled-components";
 import useFirestore from "../firebase/hooks/useFirestore";
+import { Trash } from "phosphor-react";
+import { projectFirestore } from "../firebase/config";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10% 10%;
+  padding: 0 20px;
+  font-size: 12px;
 `;
 
-const List = styled.div`
-  width: 100%;
-`;
-
-const Item = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-`;
-
-const Name = styled.div`
-  width: 33%;
-`;
-
-const Email = styled.div`
-  width: 33%;
-  text-align: right;
-`;
-
-const Guests = styled.div`
-  text-align: right;
-`;
-
-const Line = styled.div`
-  border-top: 1px solid black;
-  width: 100%;
-  padding: 10px 0;
-`;
-
-const Total = styled.div`
-  width: 100%;
-  text-align: right;
-  span {
-    color: lightgrey;
+const Table = styled.table`
+  border-collapse: collapse;
+  tr,
+  td {
+    padding: 10px 20px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
   }
 `;
 
-function total(docs) {
-  let count = 0;
-  for (let i = 0; i < docs.length; i++) {
-    count += parseInt(docs[i].guestNumber);
+const Button = styled.div`
+  color: red;
+  padding: 3px;
+  opacity: 0.3;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
   }
-  return count;
-}
+`;
+
+const Header = styled.tr`
+  background: grey;
+  color: white;
+`;
+
+const Name = styled.td`
+  font-weight: 900;
+  text-transform: capitalize;
+`;
+
+// function total(docs) {
+//   let count = 0;
+//   for (let i = 0; i < docs.length; i++) {
+//     count += parseInt(docs[i].guestNumber);
+//   }
+//   return count;
+// }
 
 export default function GuestList() {
   const { docs } = useFirestore("guests");
   console.log(docs);
 
+  const deleteGuest = (id) => {
+    if (prompt("You sure?") === "yes") {
+      projectFirestore.collection("guests").doc(id).delete();
+    }
+  };
+
   return docs.length ? (
     <Container>
-      <List>
-        {docs.map((guest, index) => (
-          <Item key={guest.id}>
-            <Name>{guest.name}</Name>
-            <Email>{guest.email}</Email>
-            <Guests>{guest.guestNumber}</Guests>
-          </Item>
-        ))}
-      </List>
-      <Line></Line>
-      <Total>
-        <span>total: </span>
-        {total(docs)}
-      </Total>
+      <Table>
+        <tbody>
+          <Header>
+            <td>Name</td>
+            <td>Email</td>
+            <td>RSVP</td>
+            <td>Guests</td>
+            <td>Children</td>
+            <td>Arrival</td>
+            <td>Camping</td>
+            <td>Diet</td>
+            <td>Diet Info</td>
+            <td>delete</td>
+          </Header>
+          {docs.map((guest) => (
+            <tr key={guest.id}>
+              <Name>{guest.name}</Name>
+              <td>{guest.email}</td>
+              <td>{guest.rsvp ? "yes" : "no"}</td>
+              <td>{guest.guestNumber}</td>
+              <td>{guest.children}</td>
+              <td>{guest.arrivalTime}</td>
+              <td>{guest.camp ? "yes" : "no"}</td>
+              <td>{guest.dietaryRestrictions ? "yes" : "no"}</td>
+              <td>{guest.dietaryInfo}</td>
+              <td>
+                <Button>
+                  <Trash onClick={() => deleteGuest(guest.id)} />
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </Container>
   ) : (
     <p>Loading....</p>

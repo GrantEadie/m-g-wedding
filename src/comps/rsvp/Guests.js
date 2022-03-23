@@ -49,7 +49,7 @@ const Guests = ({ guestInfo, setGuestInfo }) => {
       ></Input>
       <Input
         placeholder="# OF CHILDREN"
-        name="guestNumber"
+        name="children"
         onChange={(e) =>
           setGuestInfo({
             ...guestInfo,
