@@ -9,6 +9,7 @@ import Weekend from "./comps/weekend/Weekend";
 import GuestList from "./comps/guestlist/GuestList";
 import { motion } from "framer-motion";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "@stripe/stripe-js";
 
 function App() {
   return (
