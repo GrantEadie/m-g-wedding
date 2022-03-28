@@ -42,7 +42,7 @@ const Checkout = () => {
 
   return (
     <div className="checkout">
-      <h1>Stripe Checkout</h1>
+      {/* <h1>Stripe Checkout</h1>
       <p className="checkout-title">Design+Code React Hooks Course</p>
       <p className="checkout-description">
         Learn how to build a website with React Hooks
@@ -60,7 +60,7 @@ const Checkout = () => {
         <div className="text-container">
           <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
         </div>
-      </button>
+      </button> */}
     </div>
   );
 };
