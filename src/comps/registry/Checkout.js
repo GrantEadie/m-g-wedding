@@ -1,5 +1,13 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import Card from "./Card";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 let stripePromise;
 
@@ -15,8 +23,12 @@ const Checkout = () => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const item = {
-    price: "price_1KiMMaBxxlJCXXw17wWdTZsf",
+    price: "price_1KiPRmBxxlJCXXw1YZwmxtPl",
     quantity: 1,
+  };
+
+  const article = {
+    title: "Donate to Our New Home",
   };
 
   const checkoutOptions = {
@@ -31,6 +43,7 @@ const Checkout = () => {
     console.log("redirectToCheckout");
 
     const stripe = await getStripe();
+
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
     console.log("Stripe checkout error", error);
 
@@ -41,27 +54,13 @@ const Checkout = () => {
   if (stripeError) alert(stripeError);
 
   return (
-    <div className="checkout">
-      {/* <h1>Stripe Checkout</h1>
-      <p className="checkout-title">Design+Code React Hooks Course</p>
-      <p className="checkout-description">
-        Learn how to build a website with React Hooks
-      </p>
-      <h1 className="checkout-price">$19</h1>
-
-      <button
-        className="checkout-button"
-        onClick={redirectToCheckout}
-        disabled={isLoading}
-      >
-        <div className="grey-circle">
-          <div className="purple-circle"></div>
-        </div>
-        <div className="text-container">
-          <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
-        </div>
-      </button> */}
-    </div>
+    <Container>
+      <Card
+        redirectToCheckout={redirectToCheckout}
+        isLoading={isLoading}
+        item={article}
+      />
+    </Container>
   );
 };
 
