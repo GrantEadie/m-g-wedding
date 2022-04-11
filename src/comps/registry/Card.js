@@ -1,25 +1,30 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   padding: 20px;
-  width: 10%;
+  
   border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   color: black;
   margin: 10px;
-  border: 1px solid transparent;
+  border: 1px solid rgb(240, 240, 240);
   cursor: pointer;
+  min-height: 300px;
+
   &:hover {
-    border: 1px solid lightgrey;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.45) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
   }
 `;
 
 const Body = styled.div``;
 
 const Title = styled.div`
-  padding: 10px;
   color: black;
 `;
 

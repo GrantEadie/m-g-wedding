@@ -29,6 +29,8 @@ const Checkout = () => {
 
   const article = {
     title: "Donate to Our New Home",
+    amount: 50,
+    desc: "We're working on finishing the inside and outside of our recently purchased home. These donations will go to a new deck, raised beds, a perimeter fence, landscaping, and more."
   };
 
   const checkoutOptions = {
