@@ -12,56 +12,78 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background: rgba(158, 90, 74, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
 `;
 
 const Title = styled.div`
-  font-size: 2em;
+  font-size: 100px;
   width: 100%;
   text-align: center;
-  margin: 10px 0;
+
+  font-family: "Italiana", serif;
 `;
 
 const Desc = styled.div`
-  font-size: 1.1em;
+  font-size: 20px;
   text-align: center;
   margin: 10px 0;
   margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-weight: 200;
+  line-height: 2rem;
+  i {
+    font-size: 12px;
+  }
 `;
 
 const Item = styled.div`
-  width: 100%;
+  width: 80%;
   margin: 20px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--main);
+  backdrop-filter: blur(20px);
 `;
 
 const ItemTitle = styled.div`
   font-weight: 900;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   padding: 10px 0;
   margin: 10px 0;
   font-size: 1.2em;
+  font-weight: 300;
 `;
 
 const ItemDesc = styled.div`
   font-style: italic;
   font-size: 0.85em;
+  font-weight: 700;
 `;
 
 const ItemBody = styled.div`
   li {
     font-size: 0.85em;
     margin: 20px 0;
-    list-style-type: circle;
-    padding: 0 10px;
+    list-style-type: none;
+    padding: 10px 0;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
   }
 `;
 
 const Footer = styled.div`
   text-align: center;
   margin: 40px 0;
-  font-weight: 800;
+  font-weight: 300;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  
 `;
 
 export default function Weekend() {
@@ -70,12 +92,13 @@ export default function Weekend() {
       <Container>
         <Title>Weekend Info</Title>
         <Desc>
-          Come camp and hangout with us!
-          <br /> <i>Wednesday evening, June 21st - Sunday morning, June 26th</i>
+          <i>Wednesday, June 21st through Sunday, June 26th</i>
+          <br />
+          Camp and hangout with us and our family
         </Desc>
         <Item>
           <ItemTitle>I'm in! What should I expect?</ItemTitle>
-          <ItemDesc>Gosh, much fun stuff!</ItemDesc>
+          <ItemDesc>Gosh, so much fun stuff!</ItemDesc>
           <ItemBody>
             <ul>
               <li>A keg! Or two!</li>
@@ -84,7 +107,7 @@ export default function Weekend() {
               <li>A large outdoor kitchen, and an indoor kitchen!</li>
               <li>BATHROOMS</li>
               <li>A bangin soundsystem (that we can use AT ALL HOURS)</li>
-              <li>A fantastic swimming (just down the road)</li>
+              <li>A fantastic swimming hole (just down the road)</li>
               <li>Woodfire hottub</li>
               <li>Zipline</li>
               <li>ALL THE COOLEST PEOPLE EVER</li>
@@ -109,7 +132,6 @@ export default function Weekend() {
               </li>
               <li>Maybe some special drinks for yourself? Or to share?</li>
               <li>Fun games that you love</li>
-              <li>A fantastic swimming (just down the road)</li>
               <li>A costume</li>
               <li>Your wonderful self</li>
             </ul>

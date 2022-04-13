@@ -13,36 +13,45 @@ const Container = styled.div`
 
 const Day = styled.div`
   padding: 40px 20px;
-  border-top: 1px solid black;
-  background: ${({ bg }) => (bg === "friday" ? "#f0f6ff" : "transparent")};
+  border: 1px solid white;
+  margin: 10px 0;
+  background: ${({ bg }) =>
+    bg === "friday" ? "rgba(158, 90, 74, .8)" : "rgba(255, 255, 255, .7)"};
+  color: ${({ bg }) => (bg === "friday" ? "white" : "var(--tertiary)")};
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
 `;
 
 const DayHeader = styled.div`
   display: flex;
   justify-content: space-between;
   letter-spacing: 0.05rem;
-  font-family: "Montserrat", sans-serif;
+
+  font-family: "Italiana", serif;
   padding: 20px 0;
-  align-items: center;
+  align-items: baseline;
+  font-weight: bold;
 `;
 
 const DayTitle = styled.div`
   font-weight: 900;
-  font-size: 20px;
+  font-size: 30px;
 `;
 
 const DayDate = styled.div`
-  font-size: 12px;
+  
 `;
 
 const DayDesc = styled.div`
-  font-size: 12px;
+  
 `;
 
 const Item = styled.div`
-  padding: 10px 0;
+  padding: 10px 15px;
   display: flex;
   line-height: 1.7rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
 `;
 
 const ItemTime = styled.div`

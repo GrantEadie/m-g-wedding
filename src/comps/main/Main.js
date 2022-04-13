@@ -1,32 +1,49 @@
 import React from "react";
-// import CeremonyDayLogo from "../../svgs/CeremonyDayLogo";
-import Tile from "../details/Tile";
-import Lodging from "../details/Lodging";
 import Gallery from "../gallery/Gallery";
-
 import "./main.css";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const Container = styled.div``;
+
+const Buttons = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: "Italiana", serif;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+
+  a {
+    margin: 40px 0;
+    color: var(--secondary);
+    font-size: 2em;
+    padding: 5px 30px;
+    border: 1px solid white;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+  }
+`;
 
 const Main = () => {
   return (
-    <div>
-      <div className="main-container">
-        {/* <CeremonyDayLogo /> */}
-        <div className="details">
-          <Tile />
-          <Lodging />
-        </div>
-        <a
-          className="button"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://www.skalitude.com/"
-        >
-          Learn more about our venue
-        </a>
-      </div>
+    <Container>
+      <Buttons>
+        <Link to="/rsvp">rsvp</Link>
+
+        <Link to="lodging">lodging</Link>
+
+        <Link to="schedule">schedule</Link>
+
+        <Link to="weekend">weekend</Link>
+      </Buttons>
       <Gallery />
       <p className="footer-text">Thanks for helping us celebrate our love :)</p>
-    </div>
+    </Container>
   );
 };
 
