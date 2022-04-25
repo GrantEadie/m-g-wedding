@@ -18,7 +18,6 @@ const Day = styled.div`
   background: ${({ bg }) =>
     bg === "friday" ? "rgba(158, 90, 74, .8)" : "rgba(255, 255, 255, .7)"};
   color: ${({ bg }) => (bg === "friday" ? "white" : "var(--tertiary)")};
-  backdrop-filter: blur(20px);
   border-radius: 10px;
 `;
 
