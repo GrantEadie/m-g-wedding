@@ -25,13 +25,13 @@ export const schedules = [
       {
         time: "12:00pm",
         title:
-          "Free roam over the hundreds of acres that our venue (Skalitude) has to offer.",
+          "Free roam over the 160 acres of forest land that our venue (Skalitude) has to offer. There's also a sweet swimming hole just down the road!",
         who: "everyone",
       },
       {
         time: "12:00pm",
         title:
-          "Putting up decorations, setting up parking and camping areas, building the ceremony site.",
+          "[WEDDING PARTY] Putting up decorations, setting up parking and camping areas, building the ceremony site.",
         who: "wedding party (and whoever wants to join!)",
       },
       {
@@ -71,7 +71,7 @@ export const schedules = [
       },
       {
         time: "4:00pm",
-        title: "Guests start arriving. Cocktails, wine and eur d'oeuvres.",
+        title: "Guests start arriving. Cocktails, wine and hors d'oeuvres.",
         who: "everyone",
       },
       {
@@ -85,8 +85,8 @@ export const schedules = [
         who: "everyone",
       },
       {
-        time: "9:00pm",
-        title: "Party continues FOREVER",
+        time: "8:30pm",
+        title: "DANCE PARTY ALL NIGHT",
         who: "everyone",
       },
     ],
@@ -114,8 +114,7 @@ export const schedules = [
       },
       {
         time: "8:00pm",
-        title: "More music! More dancing! One more night of good energy.",
-        who: "everyone",
+        title: "Everyone is welcome to stay one more night of music, dancing, and celebration!",
       },
     ],
   },
@@ -127,7 +126,7 @@ export const schedules = [
       {
         time: "9:00am",
         title:
-          "Have one last breakfast together. Commiserate on the weekend and plan for the future.",
+          "Have one last morning together. Commiserate on the weekend and plan for the future.",
         who: "everyone",
       },
       {

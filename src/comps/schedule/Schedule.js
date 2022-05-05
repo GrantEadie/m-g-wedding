@@ -13,7 +13,8 @@ const Container = styled.div`
 
 const Day = styled.div`
   padding: 40px 20px;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--primary);
+  color: var(--primary);
   background: ${({ bg }) => (bg === "friday" ? "#f0f6ff" : "transparent")};
 `;
 
@@ -27,7 +28,7 @@ const DayHeader = styled.div`
 `;
 
 const DayTitle = styled.div`
-  font-weight: 900;
+  font-weight: 800;
   font-size: 20px;
 `;
 
@@ -52,10 +53,75 @@ const ItemTime = styled.div`
 
 const ItemTitle = styled.div``;
 
+const Header = styled.div`
+  padding: 40px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 10px;
+  box-shadow: -15px 15px 46px -20px #686868;
+
+  margin-bottom: 80px;
+`;
+
+const Title = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+`;
+
+const Time = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 30px;
+`;
+
+const Body = styled.div``;
+
+const Date = styled.div`
+  text-align: center;
+  padding-top: 40px;
+  font-weight: 900;
+  font-style: italic;
+`;
+
+const PSA = styled.div`
+  text-align: center;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  background: var(--primary);
+  color: white;
+  border-radius: 5px 5px 0px 0px ;
+`;
+
 const Schedule = () => {
   return (
     <Outer>
       <Container>
+        <Header>
+          <Title>WEDDING DAY SCHEDULE</Title>
+          <Date>Friday, June 24th 2022</Date>
+          <Time>
+            <Body>Guests Arrive</Body>
+            <Body>4:00pm</Body>
+          </Time>
+          <Time>
+            <Body>Ceremony</Body>
+            <Body>6:00pm</Body>
+          </Time>
+          <Time>
+            <Body>Dinner</Body>
+            <Body>7:00pm</Body>
+          </Time>
+          <Time>
+            <Body>Dancing</Body>
+            <Body>8:30pm</Body>
+          </Time>
+        </Header>
+        <PSA>full weekend schedule</PSA>
         {schedules.map((day, index) => (
           <Day key={index} bg={day.title}>
             <DayHeader>
