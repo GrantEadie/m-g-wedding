@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-content: center;
   padding: 0 20px;
   font-size: 12px;
+  background: rgba(255, 255, 255, 0.8);
 `;
 
 const Table = styled.table`
@@ -43,13 +44,21 @@ const Name = styled.td`
   text-transform: capitalize;
 `;
 
-// function total(docs) {
-//   let count = 0;
-//   for (let i = 0; i < docs.length; i++) {
-//     count += parseInt(docs[i].guestNumber);
-//   }
-//   return count;
-// }
+const Totals = styled.div`
+  padding: 20px;
+  font-size: 30px;
+  width: 100%;
+`;
+
+function total(docs) {
+  let count = 0;
+  for (let i = 0; i < docs.length; i++) {
+    count += parseInt(
+      docs[i].guestNumber <= 0 || !docs[i].guestNumber ? 1 : docs[i].guestNumber
+    );
+  }
+  return count;
+}
 
 export default function GuestList() {
   const { docs } = useFirestore("guests");
@@ -64,6 +73,7 @@ export default function GuestList() {
   return docs.length ? (
     <Container>
       <Table>
+        <Totals>Total: {total(docs)}</Totals>
         <tbody>
           <Header>
             <td>Name</td>
@@ -75,6 +85,7 @@ export default function GuestList() {
             <td>Camping</td>
             <td>Diet</td>
             <td>Diet Info</td>
+            <td>Accommodation</td>
             <td>delete</td>
           </Header>
           {docs.map((guest) => (
@@ -82,12 +93,19 @@ export default function GuestList() {
               <Name>{guest.name}</Name>
               <td>{guest.email}</td>
               <td>{guest.rsvp ? "yes" : "no"}</td>
-              <td>{guest.guestNumber}</td>
-              <td>{guest.children}</td>
+              <td>
+                {guest.guestNumber <= 0 || !guest.guestNumber
+                  ? 1
+                  : guest.guestNumber}
+              </td>
+              <td>
+                {guest.children < 0 || !guest.children ? "" : guest.children}
+              </td>
               <td>{guest.arrivalTime}</td>
               <td>{guest.camp ? "yes" : "no"}</td>
               <td>{guest.dietaryRestrictions ? "yes" : "no"}</td>
               <td>{guest.dietaryInfo}</td>
+              <td>{guest.accommodation}</td>
               <td>
                 <Button>
                   <Trash onClick={() => deleteGuest(guest.id)} />

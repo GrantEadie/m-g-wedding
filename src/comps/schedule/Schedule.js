@@ -13,37 +13,55 @@ const Container = styled.div`
 
 const Day = styled.div`
   padding: 40px 20px;
+<<<<<<< HEAD
   border-top: 1px solid var(--primary);
   color: var(--primary);
   background: ${({ bg }) => (bg === "friday" ? "#f0f6ff" : "transparent")};
+=======
+  border: 1px solid white;
+  margin: 10px 0;
+  background: ${({ bg }) =>
+    bg === "friday" ? "rgba(158, 90, 74, .8)" : "rgba(255, 255, 255, .7)"};
+  color: ${({ bg }) => (bg === "friday" ? "white" : "var(--tertiary)")};
+  border-radius: 10px;
+>>>>>>> a3cc82e5a02c344be5eebb1e2446c5f724ac5ea2
 `;
 
 const DayHeader = styled.div`
   display: flex;
   justify-content: space-between;
   letter-spacing: 0.05rem;
-  font-family: "Montserrat", sans-serif;
+
+  font-family: "Italiana", serif;
   padding: 20px 0;
-  align-items: center;
+  align-items: baseline;
+  font-weight: bold;
 `;
 
 const DayTitle = styled.div`
+<<<<<<< HEAD
   font-weight: 800;
   font-size: 20px;
+=======
+  font-weight: 900;
+  font-size: 30px;
+>>>>>>> a3cc82e5a02c344be5eebb1e2446c5f724ac5ea2
 `;
 
 const DayDate = styled.div`
-  font-size: 12px;
+  
 `;
 
 const DayDesc = styled.div`
-  font-size: 12px;
+  
 `;
 
 const Item = styled.div`
-  padding: 10px 0;
+  padding: 10px 15px;
   display: flex;
   line-height: 1.7rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
 `;
 
 const ItemTime = styled.div`

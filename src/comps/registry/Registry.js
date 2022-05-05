@@ -1,7 +1,7 @@
-const Registry = () => {
-    return (
-        <div>Almost done!</div>
-    )
-}
+import Checkout from "./Checkout";
 
-export default Registry
+const Registry = () => {
+  return <Checkout />;
+};
+
+export default Registry;

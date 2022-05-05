@@ -23,7 +23,9 @@ const Container = styled.div`
   overflow-x: hidden;
   padding: 10px;
   max-width: 100vw;
-  margin-top: 100px;
+  padding: 100px 0;
+  background: rgba(245, 245, 245, 0.8);
+  border-radius: 10px;
 `;
 
 const Body = styled.div`
