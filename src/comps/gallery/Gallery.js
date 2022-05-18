@@ -17,7 +17,7 @@ const Gallery = () => {
             <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
           )}
         </AnimatePresence>
-        <UploadForm />
+        {/* <UploadForm /> */}
       </div>
     </div>
   );

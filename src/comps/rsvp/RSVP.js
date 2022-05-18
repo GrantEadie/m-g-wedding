@@ -24,7 +24,7 @@ const Container = styled.div`
   padding: 10px;
   max-width: 100vw;
   padding: 100px 0;
-  background: rgba(245, 245, 245, 0.8);
+  background: rgba(245, 245, 245, 1);
   border-radius: 10px;
 `;
 

@@ -42,7 +42,6 @@ const Main = () => {
         <Link to="weekend">weekend</Link>
       </Buttons>
       <Gallery />
-      <p className="footer-text">Thanks for helping us celebrate our love :)</p>
     </Container>
   );
 };

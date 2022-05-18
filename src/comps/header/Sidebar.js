@@ -12,6 +12,7 @@ const Sidebar = () => {
       <Link to="schedule">schedule</Link>
 
       <Link to="weekend">weekend</Link>
+      <Link to="registry">registry</Link>
       <Link to="/">
         <HouseSimple size={32} />
       </Link>
