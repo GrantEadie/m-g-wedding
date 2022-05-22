@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactComponent as Berry } from "../../svgs/simple-berry.svg";
+import { ReactComponent as Venmo } from "../../svgs/venmo.svg";
 import { X, Heart } from "phosphor-react";
 import { useState } from "react";
 import { projectFirestore, timestamp } from "../firebase/config";
@@ -205,13 +206,30 @@ const ThankYou = styled.div`
   margin: 40px 0;
 `;
 
-const Payment = styled.div``;
+const PaymentBox = styled.div`
+  display: flex;
+  svg {
+    width: 50%;
+    height: 50%;
+  }
+`;
 
-const PaymentTitle = styled.div``;
+const Payment = styled.div`
+  font-size: 10px;
+  width: 33%;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 5px;
+`;
 
-const PaymentUrl = styled.div``;
+const PaymentTitle = styled.div`
+  font-weight: 900;
+`;
 
-const PaymentInfo = styled.div``;
+const PaymentInfo = styled.div`
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 0;
+`;
 
 export default function CheckoutModal({ setModal, selectedItem }) {
   const [info, setInfo] = useState({});
@@ -248,22 +266,25 @@ export default function CheckoutModal({ setModal, selectedItem }) {
               Paypal, or by check. You can find all the relevant information
               below!
             </Desc>
-            <Payment>
-              <PaymentTitle>Venmo</PaymentTitle>
-              <PaymentInfo>Grant: @grant-eadie</PaymentInfo>
-              <PaymentInfo>Mollie: @Mollie-Hunt-1</PaymentInfo>
-            </Payment>
-            <Payment>
-              <PaymentTitle>Paypal</PaymentTitle>
-              <PaymentInfo>Grant: grantleadie@gmail.com</PaymentInfo>
-              <PaymentInfo>Mollie: mollie.hunt77@gmail.com</PaymentInfo>
-            </Payment>
-            <Payment>
-              <PaymentTitle>Check</PaymentTitle>
-              <PaymentInfo>
-                Grant Eadie or Mollie Hunt: PO Box 545, Twisp WA 98856
-              </PaymentInfo>
-            </Payment>
+            <PaymentBox>
+              <Payment>
+                <PaymentTitle>Venmo</PaymentTitle>
+                <PaymentInfo>Grant: @grant-eadie</PaymentInfo>
+                <PaymentInfo>Mollie: @Mollie-Hunt-1</PaymentInfo>
+                <Venmo />
+              </Payment>
+              <Payment>
+                <PaymentTitle>Paypal</PaymentTitle>
+                <PaymentInfo>Grant: grantleadie@gmail.com</PaymentInfo>
+                <PaymentInfo>Mollie: mollie.hunt77@gmail.com</PaymentInfo>
+              </Payment>
+              <Payment>
+                <PaymentTitle>Check</PaymentTitle>
+                <PaymentInfo>
+                  Grant Eadie or Mollie Hunt: PO Box 545, Twisp WA 98856
+                </PaymentInfo>
+              </Payment>
+            </PaymentBox>
             <Icon>{selectedItem.icon}</Icon>
             <SubTitle>
               Fill out this form below so we know who sent us gifts :)

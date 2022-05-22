@@ -37,13 +37,9 @@ const DayTitle = styled.div`
   font-size: 30px;
 `;
 
-const DayDate = styled.div`
-  
-`;
+const DayDate = styled.div``;
 
-const DayDesc = styled.div`
-  
-`;
+const DayDesc = styled.div``;
 
 const Item = styled.div`
   padding: 10px 15px;
@@ -114,15 +110,15 @@ const Schedule = () => {
           </Time>
           <Time>
             <Body>Ceremony</Body>
-            <Body>6:00pm</Body>
+            <Body>5:30pm</Body>
           </Time>
           <Time>
             <Body>Dinner</Body>
-            <Body>7:00pm</Body>
+            <Body>6:30pm</Body>
           </Time>
           <Time>
             <Body>Dancing</Body>
-            <Body>8:30pm</Body>
+            <Body>7:30pm</Body>
           </Time>
         </Header>
         <PSA>full weekend schedule</PSA>

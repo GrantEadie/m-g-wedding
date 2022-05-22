@@ -60,9 +60,22 @@ function total(docs) {
   return count;
 }
 
+function campers(docs) {
+  let count = 0;
+  for (let i = 0; i < docs.length; i++) {
+    if (docs[i].camp) {
+      count += parseInt(
+        docs[i].guestNumber <= 0 || !docs[i].guestNumber
+          ? 1
+          : docs[i].guestNumber
+      );
+    }
+  }
+  return count;
+}
+
 export default function GuestList() {
   const { docs } = useFirestore("guests");
-  console.log(docs);
 
   const deleteGuest = (id) => {
     if (prompt("You sure?") === "yes") {
@@ -73,7 +86,9 @@ export default function GuestList() {
   return docs.length ? (
     <Container>
       <Table>
-        <Totals>Total: {total(docs)}</Totals>
+        <Totals>
+          Total: {total(docs)} | Campers: {campers(docs)}
+        </Totals>s
         <tbody>
           <Header>
             <td>Name</td>
