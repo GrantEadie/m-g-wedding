@@ -122,11 +122,6 @@ export const schedules = [
           "Brunch hosted by Dee Simon & Nancy Lazara (mothers of maid-of-honor). Stop by for a breakfast burrito with options including beans, potatoes, eggs, cheese, salsa.",
       },
       {
-        time: "All Day",
-        title:
-          "Brunch hosted by Dee Simon & Nancy Lazara (mothers of maid-of-honor). Stop by for a breakfast burrito with options including beans, potatoes, eggs, cheese, salsa.",
-      },
-      {
         time: "6:00pm",
         title:
           "Galen and Adri (Mollie’s  brother and sister-in-law) are hosting a pizza dinner, local delivery!",
