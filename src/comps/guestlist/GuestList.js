@@ -50,6 +50,14 @@ const Totals = styled.div`
   width: 100%;
 `;
 
+const TotalArrivals = styled.div`
+  display: flex;
+  font-size: 12px;
+  div {
+    margin-right: 10px;
+  }
+`;
+
 function total(docs) {
   let count = 0;
   for (let i = 0; i < docs.length; i++) {
@@ -74,6 +82,24 @@ function campers(docs) {
   return count;
 }
 
+function arrivalDay(docs) {
+  let count = [];
+  for (let i = 0; i < docs.length; i++) {
+    if (count.filter((e) => e.date === docs[i].arrivalTime).length <= 0) {
+      count.push({ date: docs[i].arrivalTime, amount: 1 });
+    } else {
+      count[
+        count.indexOf(count.filter((e) => e.date === docs[i].arrivalTime)[0])
+      ].amount += parseInt(
+        docs[i].guestNumber <= 0 || !docs[i].guestNumber
+          ? 1
+          : docs[i].guestNumber
+      );
+    }
+  }
+  return count;
+}
+
 export default function GuestList() {
   const { docs } = useFirestore("guests");
 
@@ -83,12 +109,21 @@ export default function GuestList() {
     }
   };
 
+  console.log(arrivalDay(docs));
+
   return docs.length ? (
     <Container>
       <Table>
         <Totals>
           Total: {total(docs)} | Campers: {campers(docs)}
-        </Totals>s
+          <TotalArrivals>
+            {arrivalDay(docs).map((day, index) => (
+              <div>
+                {day.date ? day.date : "unspecified"}: {day.amount}
+              </div>
+            ))}
+          </TotalArrivals>
+        </Totals>
         <tbody>
           <Header>
             <td>Name</td>

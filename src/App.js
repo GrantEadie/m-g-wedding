@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@stripe/stripe-js";
 import styled from "styled-components";
+import Food from "./comps/food/Food";
 
 const Holder = styled.div`
   padding: 20px 20px;
@@ -37,6 +38,7 @@ function App() {
             <Route path="registry" element={<Registry />} />
             <Route path="weekend" element={<Weekend />} />
             <Route path="guestlist" element={<GuestList />} />
+            <Route path="food" element={<Food />} />
           </Routes>
         </Holder>
       </motion.div>

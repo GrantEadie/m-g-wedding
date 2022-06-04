@@ -53,7 +53,7 @@ const Lodging = () => {
         <Body>
           There are more than enough camp spots at our venue for everyone.
           Trailers, tents, and vans are all welcome. You will have access to a
-          large kitchen, bathrooms, and a sauna in the main lodge.
+          large kitchen, bathrooms, and two showers. 
         </Body>
         <Body>
           If you are looking for accommodations in town, here are some options

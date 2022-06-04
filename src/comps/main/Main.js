@@ -40,6 +40,7 @@ const Main = () => {
         <Link to="schedule">schedule</Link>
 
         <Link to="weekend">weekend</Link>
+        <Link to="food">food</Link>
       </Buttons>
       <Gallery />
     </Container>

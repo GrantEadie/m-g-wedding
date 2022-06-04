@@ -7,7 +7,7 @@ export const schedules = [
       {
         time: "4:00pm",
         title:
-          "We start setting up! We'll spend this evening catching up with old friends, getting acquainted with new ones, putting up decorations, and setting up the amenities (i.e. the soundsystem that Grant rented for the whole weekend). You're welcome to join us for some very relaxed energy: music, beer, and lawn games all evening. Anyone willing to help and hang is welcome as early as Wednesday evening! We are not welcome at the venue before 4pm.",
+          "We start setting up! We'll spend this evening catching up with old friends, getting acquainted with new ones, putting up decorations, and setting up the amenities (i.e. the soundsystem that Grant rented for the whole weekend). You're welcome to join us for some very relaxed energy: music, beer, and lawn games all evening. Anyone willing to help and hang is welcome as early as Wednesday evening! We are not welcome at the venue before 4pm. (Food is not provided this day)",
       },
     ],
   },

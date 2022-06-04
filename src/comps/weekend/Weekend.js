@@ -91,7 +91,7 @@ export default function Weekend() {
       <Container>
         <Title>Weekend Info</Title>
         <Desc>
-          <i>Wednesday, June 21st through Sunday, June 26th</i>
+          <i>Wednesday, June 22nd through Sunday, June 26th</i>
           <br />
           Camp and hangout with us and our family
         </Desc>
@@ -124,10 +124,12 @@ export default function Weekend() {
             <ul>
               <li>Tent/Sleeping quarters</li>
               <li>Blankets and bedding</li>
+              <li>Towels</li>
               <li>Swimsuit</li>
               <li>
-                Personal meals and snacks (not for the wedding day, we got you
-                there)
+                Personal meals for Wednesday (breakfast, lunch, dinner),
+                Thursday (breakfast, lunch, dinner), Saturday (lunch), Sunday
+                (breakfast) - we've got you on Friday and Saturday (breakfast, dinner)! 
               </li>
               <li>Maybe some special drinks for yourself? Or to share?</li>
               <li>Fun games that you love</li>
