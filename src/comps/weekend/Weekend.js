@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { ReactComponent as Map } from "../../svgs/skalitude-map.svg";
 
 const Holder = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 0 30px;
   font-family: "Montserrat", sans-serif;
@@ -12,18 +15,17 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: rgba(158, 90, 74, 0.9);
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  background: var(--main);
   padding: 40px;
-  border-radius: 10px;
-  color: white;
+  border-radius: 3px;
+  color: var(--secondary);
+  margin-bottom: 40px;
 `;
 
 const Title = styled.div`
-  font-size: 100px;
+  font-size: 80px;
   width: 100%;
   text-align: center;
-
   font-family: "Italiana", serif;
 `;
 
@@ -46,8 +48,7 @@ const Item = styled.div`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 40px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--main);
+  color: var(--secondary);
 `;
 
 const ItemTitle = styled.div`
@@ -56,33 +57,51 @@ const ItemTitle = styled.div`
   padding: 10px 0;
   margin: 10px 0;
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 700;
 `;
 
 const ItemDesc = styled.div`
   font-style: italic;
-  font-size: 0.85em;
-  font-weight: 700;
+  font-size: 0.75em;
+  font-weight: 300;
 `;
 
 const ItemBody = styled.div`
+  ul {
+    padding: 0;
+  }
   li {
     font-size: 0.85em;
-    margin: 20px 0;
+    margin: 10px 0;
     list-style-type: none;
-    padding: 10px 0;
-    font-weight: 300;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0px 0px;
+    font-weight: 500;
+
     letter-spacing: 1px;
   }
 `;
 
 const Footer = styled.div`
-  text-align: center;
+  text-align: left;
   margin: 40px 0;
-  font-weight: 300;
-  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
-    1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+`;
+
+const MapHolder = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 85%;
+    height: 100%;
+    path {
+      fill: var(--tertiary);
+    }
+  }
+  padding: 20px 0;
+  background: var(--main);
+  border-radius: 3px;
 `;
 
 export default function Weekend() {
@@ -92,8 +111,6 @@ export default function Weekend() {
         <Title>Weekend Info</Title>
         <Desc>
           <i>Wednesday, June 22nd through Sunday, June 26th</i>
-          <br />
-          Camp and hangout with us and our family
         </Desc>
         <Item>
           <ItemTitle>I'm in! What should I expect?</ItemTitle>
@@ -129,23 +146,21 @@ export default function Weekend() {
               <li>
                 Personal meals for Wednesday (breakfast, lunch, dinner),
                 Thursday (breakfast, lunch, dinner), Saturday (lunch), Sunday
-                (breakfast) - we've got you on Friday and Saturday (breakfast, dinner)! 
+                (breakfast) - we've got you on Friday and Saturday (breakfast,
+                dinner)!
               </li>
               <li>Maybe some special drinks for yourself? Or to share?</li>
               <li>Fun games that you love</li>
-              <li>A costume</li>
+              <li>Walkie Talkies</li>
+              <li>A COSTUME (this is very important)</li>
               <li>Your wonderful self</li>
             </ul>
           </ItemBody>
         </Item>
-        <Footer>
-          Do not hesitate to call/text/email one of us with questions! <br />
-          <br />
-          Grant (509) 590 - 7955 | grantleadie@gmail.com <br />
-          <br />
-          Mollie (360) 255 - 3614 | mollie.hunt77@gmail.com
-        </Footer>
       </Container>
+      <MapHolder>
+        <Map />
+      </MapHolder>
     </Holder>
   );
 }
